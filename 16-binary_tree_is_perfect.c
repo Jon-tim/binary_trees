@@ -1,5 +1,5 @@
-int custom_power(int num);
 #include "binary_trees.h"
+int custom_power(int num);
 /**
  * binary_tree_is_perfect - a function that checks if a binary tree is perfect
  * @tree: a pointer to the root node of the tree to check
