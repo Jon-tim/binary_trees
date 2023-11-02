@@ -6,14 +6,14 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int height = 0, power_of_two = 1, size = 0;
+	int height = 0, i, power_of_two = 1, size = 0;
 
 	if (tree)
 	{
 		height = binary_tree_height(tree);
 		size = binary_tree_size(tree);
 
-		for (int i = 0; i < height + 1; i++)
+		for (i = 0; i < height + 1; i++)
 		{
 			power_of_two *= 2;
 		};
