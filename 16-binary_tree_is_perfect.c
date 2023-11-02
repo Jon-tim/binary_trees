@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-int custom_power(int num);
 /**
  * binary_tree_is_perfect - a function that checks if a binary tree is perfect
  * @tree: a pointer to the root node of the tree to check
@@ -7,13 +6,18 @@ int custom_power(int num);
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int height = 0, size = 0;
+	int height = 0, power_of_two = 1, size = 0;
 
 	if (tree)
 	{
-		height = binary_tree_height(tree) + 1;
+		height = binary_tree_height(tree);
 		size = binary_tree_size(tree);
-		return (custom_power(height) - 1 == size ? 1 : 0);
+
+		for (int i = 0; i < height + 1; i++)
+		{
+			power_of_two *= 2;
+		};
+		return (power_of_two - 1 == size ? 1 : 0);
 	}
 	return (0);
 }
@@ -60,20 +64,4 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		return ((left_height > right_height ? left_height : right_height));
 	}
 	return (0);
-}
-
-/**
- * custom_power - calculates the power of a given exponent
- * @num: exponent
- * Return: result
- */
-int custom_power(int num)
-{
-	int result = 1;
-
-	for (int i = 0; i < num; i++)
-	{
-		result *= 2;
-	}
-	return (result);
 }
