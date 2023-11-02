@@ -65,7 +65,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 /**
  * custom_power - calculates the power of a given exponent
  * @num: exponent
- * Return: 2^num
+ * Return: result
  */
 int custom_power(int num)
 {
